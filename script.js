@@ -1,68 +1,61 @@
-// THEME TOGGLE
 const toggle = document.getElementById("themeToggle");
 toggle.onclick = () => {
     document.body.classList.toggle("light");
+    toggle.textContent = document.body.classList.contains("light") ? "☀️" : "🌙";
 };
 
-// SCROLL ANIMATION
-const reveals = document.querySelectorAll(".reveal");
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add("show");
-    });
-});
-reveals.forEach(r => observer.observe(r));
+const modal = document.getElementById("projectModal");
+const title = document.getElementById("projectTitle");
+const desc = document.getElementById("projectDescription");
+const tech = document.getElementById("projectTech");
+const github = document.getElementById("projectGitHub");
+const image = document.getElementById("projectImage");
 
-// PROJECT DATA
 const projects = {
     hexaload: {
-        title: "Hexaload Robot",
-        desc: "Autonomous hexapod robot for load transportation.",
-        tech: ["Embedded", "Robotics"],
-        img: "images/hexaload.jpg",
-        git: "#"
+        title: "Hexaload – Hexapod Robot",
+        desc: "Autonomous hexapod robot for load transport.",
+        tech: ["Embedded", "Robotics", "PCB"],
+        link: "https://github.com/yourusername/hexaload",
+        image: "./images/hexaload.jpg"
     },
     parking: {
-        title: "Smart Parking",
-        desc: "Sensor-based parking automation.",
-        tech: ["Embedded", "Sensors"],
-        img: "images/parking.jpg",
-        git: "#"
+        title: "Smart Parking System",
+        desc: "Sensor-based embedded parking system.",
+        tech: ["Embedded", "Sensors", "C"],
+        link: "https://github.com/yourusername/smart-parking",
+        image: "./images/parking.jpg"
     },
     pipeline: {
         title: "Pipeline Corrosion Detection",
         desc: "AI-based corrosion detection system.",
-        tech: ["AI", "Python"],
-        img: "images/pipeline.jpg",
-        git: "#"
+        tech: ["Python", "AI"],
+        link: "https://github.com/yourusername/pipeline",
+        image: "./images/pipeline.jpg"
     },
     maze: {
-        title: "Maze Solver PCB",
-        desc: "Custom PCB for autonomous maze solver robot.",
-        tech: ["PCB Design"],
-        img: "images/maze_pcb.jpg",
-        git: "#"
+        title: "PCB for Maze Solver Robot",
+        desc: "Custom PCB for autonomous maze solving.",
+        tech: ["PCB Design", "Embedded"],
+        link: "https://github.com/yourusername/maze-pcb",
+        image: "./images/maze_pcb.jpg"
     }
 };
-
-// MODAL LOGIC
-const modal = document.getElementById("projectModal");
-const img = document.getElementById("modalImg");
-const title = document.getElementById("modalTitle");
-const desc = document.getElementById("modalDesc");
-const tech = document.getElementById("modalTech");
-const git = document.getElementById("modalGit");
 
 function openProject(key) {
     const p = projects[key];
     modal.style.display = "block";
-    img.src = p.img;
-    title.innerText = p.title;
-    desc.innerText = p.desc;
+    title.textContent = p.title;
+    desc.textContent = p.desc;
+    image.src = p.image;
     tech.innerHTML = p.tech.map(t => `<li>${t}</li>`).join("");
-    git.href = p.git;
+    github.href = p.link;
 }
 
 function closeProject() {
     modal.style.display = "none";
 }
+
+window.onclick = e => {
+    if (e.target === modal) closeProject();
+};
