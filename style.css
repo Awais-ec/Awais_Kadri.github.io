@@ -1,0 +1,94 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* HEADER */
+.header {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: #fff;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* SECTIONS */
+.section {
+    max-width: 900px;
+    background: #fff;
+    margin: 25px auto;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.section h2 {
+    color: #1e3c72;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+}
+
+/* LISTS */
+.section ul {
+    margin-left: 20px;
+}
+
+.section ul li {
+    margin-bottom: 10px;
+}
+
+/* CARDS (Internships) */
+.card {
+    background: #f9fafb;
+    padding: 15px;
+    border-left: 4px solid #2a5298;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    color: #2a5298;
+    margin-bottom: 5px;
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    padding: 15px;
+    background: #1e3c72;
+    color: #fff;
+    margin-top: 30px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .section {
+        margin: 15px;
+        padding: 20px;
+    }
+}
