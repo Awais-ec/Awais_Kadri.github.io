@@ -33,14 +33,14 @@ const projects = {
         title: "Sea Pipeline Corrosion Detection",
         desc: "AI-based image analysis system to detect corrosion in underwater pipelines for industrial safety.",
         tech: ["Python", "AI", "Image Processing"],
-        link: "https://github.com/yourusername/pipeline-corrosion",
+        link: "https://github.com/Awais-ec/corrosion--app",
         image: "images/pipeline.jpg"
     },
     maze: {
         title: "PCB for Maze Solver Robot",
         desc: "Custom PCB designed for an autonomous maze-solving robot with optimized routing, compact layout, and efficient motor driver integration.",
         tech: ["PCB Design", "Embedded Systems", "Motor Drivers"],
-        link: "https://github.com/yourusername/maze-solver-pcb",
+        link: "https://github.com/Awais-ec/PCB-Design-Maze-solver",
         image: "images/maze_pcb.jpg"
     }
 };
@@ -63,3 +63,4 @@ function closeProject() {
 window.onclick = e => {
     if (e.target === modal) closeProject();
 };
+
