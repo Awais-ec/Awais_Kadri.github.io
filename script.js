@@ -1,65 +1,68 @@
-/* THEME TOGGLE */
+// THEME TOGGLE
 const toggle = document.getElementById("themeToggle");
 toggle.onclick = () => {
     document.body.classList.toggle("light");
-    toggle.textContent = document.body.classList.contains("light") ? "☀️" : "🌙";
 };
 
-/* MODAL ELEMENTS */
-const modal = document.getElementById("projectModal");
-const title = document.getElementById("projectTitle");
-const desc = document.getElementById("projectDescription");
-const tech = document.getElementById("projectTech");
-const github = document.getElementById("projectGitHub");
-const image = document.getElementById("projectImage");
+// SCROLL ANIMATION
+const reveals = document.querySelectorAll(".reveal");
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("show");
+    });
+});
+reveals.forEach(r => observer.observe(r));
 
-/* PROJECT DATA */
+// PROJECT DATA
 const projects = {
     hexaload: {
-        title: "Hexaload – Hexapod Robot",
-        desc: "A six-legged autonomous robot designed to carry loads across uneven terrain. Focused on stability, balance, and embedded motor control. SSIP funded and Robofest award winner.",
-        tech: ["Embedded Systems", "Robotics", "Motor Control", "PCB Design"],
-        link: "https://github.com/yourusername/hexaload",
-        image: "images/hexaload.jpg"
+        title: "Hexaload Robot",
+        desc: "Autonomous hexapod robot for load transportation.",
+        tech: ["Embedded", "Robotics"],
+        img: "images/hexaload.jpg",
+        git: "#"
     },
     parking: {
-        title: "Smart Parking System",
-        desc: "Embedded solution using sensors to detect vehicle presence and manage parking slots efficiently.",
-        tech: ["Embedded Systems", "Sensors", "C Programming"],
-        link: "https://github.com/yourusername/smart-parking",
-        image: "images/parking.jpg"
+        title: "Smart Parking",
+        desc: "Sensor-based parking automation.",
+        tech: ["Embedded", "Sensors"],
+        img: "images/parking.jpg",
+        git: "#"
     },
     pipeline: {
-        title: "Sea Pipeline Corrosion Detection",
-        desc: "AI-based image analysis system to detect corrosion in underwater pipelines for industrial safety.",
-        tech: ["Python", "AI", "Image Processing"],
-        link: "https://github.com/yourusername/pipeline-corrosion",
-        image: "images/pipeline.jpg"
+        title: "Pipeline Corrosion Detection",
+        desc: "AI-based corrosion detection system.",
+        tech: ["AI", "Python"],
+        img: "images/pipeline.jpg",
+        git: "#"
     },
     maze: {
-        title: "PCB for Maze Solver Robot",
-        desc: "Custom PCB designed for an autonomous maze-solving robot with optimized routing, compact layout, and efficient motor driver integration.",
-        tech: ["PCB Design", "Embedded Systems", "Motor Drivers"],
-        link: "https://github.com/yourusername/maze-solver-pcb",
-        image: "images/maze_pcb.jpg"
+        title: "Maze Solver PCB",
+        desc: "Custom PCB for autonomous maze solver robot.",
+        tech: ["PCB Design"],
+        img: "images/maze_pcb.jpg",
+        git: "#"
     }
 };
+
+// MODAL LOGIC
+const modal = document.getElementById("projectModal");
+const img = document.getElementById("modalImg");
+const title = document.getElementById("modalTitle");
+const desc = document.getElementById("modalDesc");
+const tech = document.getElementById("modalTech");
+const git = document.getElementById("modalGit");
 
 function openProject(key) {
     const p = projects[key];
     modal.style.display = "block";
-    title.textContent = p.title;
-    desc.textContent = p.desc;
-    image.src = p.image;
-    tech.innerHTML = "";
-    p.tech.forEach(t => tech.innerHTML += `<li>${t}</li>`);
-    github.href = p.link;
+    img.src = p.img;
+    title.innerText = p.title;
+    desc.innerText = p.desc;
+    tech.innerHTML = p.tech.map(t => `<li>${t}</li>`).join("");
+    git.href = p.git;
 }
 
 function closeProject() {
     modal.style.display = "none";
 }
-
-window.onclick = e => {
-    if (e.target === modal) closeProject();
-};
