@@ -214,4 +214,11 @@ body.light #contact .contact-info {
 body.light #contact {
     border-top: 1px solid #e5e7eb;
 }
+/* Simple light-mode text color fix for Contact section */
+body.light #contact p,
+body.light #contact .contact-info,
+body.light #contact .section-title {
+    color: #1e293b;   /* dark slate blue – readable & professional */
+}
+
 
