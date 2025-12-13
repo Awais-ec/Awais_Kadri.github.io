@@ -32,7 +32,7 @@ function openProject(project) {
             tech.innerHTML += `<li>${t}</li>`
         );
 
-        github.href = "https://github.com/yourusername/smart-parking";
+        github.href = "https://github.com/Awais-ec/corrosion--app";
     }
 
     if (project === "pipeline") {
@@ -56,3 +56,4 @@ function closeProject() {
 window.onclick = (e) => {
     if (e.target === modal) closeProject();
 };
+
