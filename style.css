@@ -199,3 +199,19 @@ body.light .skill-box,
 body.light .modal-box {
     background: #ffffff;
 }
+/* ===== LIGHT MODE CONTACT FIX ===== */
+body.light #contact {
+    background: #f8fafc;   /* light background */
+}
+
+body.light #contact .section-title,
+body.light #contact p,
+body.light #contact .contact-info {
+    color: #020617;        /* dark readable text */
+}
+
+/* Optional: subtle divider feel */
+body.light #contact {
+    border-top: 1px solid #e5e7eb;
+}
+
