@@ -12,6 +12,8 @@ const desc = document.getElementById("projectDescription");
 const tech = document.getElementById("projectTech");
 const github = document.getElementById("projectGitHub");
 const image = document.getElementById("projectImage");
+const liveBtn = document.getElementById("projectLive");
+
 
 /* PROJECT DATA */
 const projects = {
@@ -82,4 +84,5 @@ function openProject(key) {
         liveBtn.style.display = "none";
     }
 }
+
 
