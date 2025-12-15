@@ -21,21 +21,21 @@ const projects = {
         title: "Hexaload – Hexapod Robot",
         desc: "A six-legged autonomous robot designed to carry loads across uneven terrain. Focused on stability, balance, and embedded motor control. SSIP funded and Robofest award winner.",
         tech: ["Embedded Systems", "Robotics", "Motor Control", "PCB Design"],
-        link: "https://github.com/yourusername/hexaload",
+        link: "https://github.com/Awais-ec/Hexaload",
         image: "images/hexaload.jpg"
     },
     parking: {
         title: "Smart Parking System",
         desc: "Embedded solution using sensors to detect vehicle presence and manage parking slots efficiently.",
         tech: ["Embedded Systems", "Sensors", "C Programming"],
-        link: "https://github.com/yourusername/smart-parking",
+        link: "https://github.com/Awais-ec/Smart-Parking-System",
         image: "images/parking.jpg"
     },
   pipeline: {
     title: "Sea Pipeline Corrosion Detection",
     desc: "AI-based image analysis system to detect corrosion in underwater pipelines for industrial safety.",
     tech: ["Python", "AI", "Image Processing"],
-    link: "https://github.com/yourusername/pipeline-corrosion",
+    link: "https://github.com/Awais-ec/corrosion--app",
     live: "https://lnkd.in/g8b2PhfW",
     image: "images/pipeline.jpg"
 },
@@ -107,6 +107,7 @@ document.addEventListener("keydown", function (e) {
 function closeProject() {
     modal.style.display = "none";
 }
+
 
 
 
