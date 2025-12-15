@@ -29,13 +29,15 @@ const projects = {
         link: "https://github.com/yourusername/smart-parking",
         image: "images/parking.jpg"
     },
-    pipeline: {
-        title: "Sea Pipeline Corrosion Detection",
-        desc: "AI-based image analysis system to detect corrosion in underwater pipelines for industrial safety.",
-        tech: ["Python", "AI", "Image Processing"],
-        link: "https://github.com/Awais-ec/corrosion--app",
-        image: "images/pipeline.jpg"
-    },
+  pipeline: {
+    title: "Sea Pipeline Corrosion Detection",
+    desc: "AI-based image analysis system to detect corrosion in underwater pipelines for industrial safety.",
+    tech: ["Python", "AI", "Image Processing"],
+    link: "https://github.com/yourusername/pipeline-corrosion",
+    live: "https://your-live-app-link-here",
+    image: "images/pipeline.jpg"
+},
+
     maze: {
         title: "PCB for Maze Solver Robot",
         desc: "Custom PCB designed for an autonomous maze-solving robot with optimized routing, compact layout, and efficient motor driver integration.",
@@ -48,19 +50,36 @@ const projects = {
 function openProject(key) {
     const p = projects[key];
     modal.style.display = "block";
+
+    // Basic content
     title.textContent = p.title;
     desc.textContent = p.desc;
     image.src = p.image;
+    image.alt = p.title;
+
+    // Technologies list
     tech.innerHTML = "";
-    p.tech.forEach(t => tech.innerHTML += `<li>${t}</li>`);
-    github.href = p.link;
-}
+    p.tech.forEach(t => {
+        tech.innerHTML += `<li>${t}</li>`;
+    });
 
-function closeProject() {
-    modal.style.display = "none";
-}
+    // -------- BUTTON LOGIC --------
 
-window.onclick = e => {
-    if (e.target === modal) closeProject();
-};
+    // View Details button
+    if (p.link) {
+        github.style.display = "inline-block";
+        github.href = p.link;
+        github.textContent = "View Details";
+    } else {
+        github.style.display = "none"; // Hexaload
+    }
+
+    // Live App button (ONLY Pipeline)
+    if (p.live) {
+        liveBtn.style.display = "inline-block";
+        liveBtn.href = p.live;
+    } else {
+        liveBtn.style.display = "none";
+    }
+}
 
