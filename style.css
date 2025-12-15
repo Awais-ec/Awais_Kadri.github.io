@@ -93,6 +93,13 @@ html { scroll-behavior: smooth; }
     display: inline-block;
     transition: 0.3s;
 }
+.modal-buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
 .primary {
     background: linear-gradient(135deg, #38bdf8, #0ea5e9);
     color: #000;
@@ -220,5 +227,6 @@ body.light #contact .contact-info,
 body.light #contact .section-title {
     color: #1e293b;   /* dark slate blue – readable & professional */
 }
+
 
 
