@@ -84,6 +84,30 @@ function openProject(key) {
         liveBtn.style.display = "none";
     }
 }
+// ===== MODAL CLOSE LOGIC (FINAL FIX) =====
+
+// Close button
+document.getElementById("closeModal").addEventListener("click", closeProject);
+
+// Click outside modal box
+modal.addEventListener("click", function (e) {
+    if (e.target === modal) {
+        closeProject();
+    }
+});
+
+// ESC key support
+document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && modal.style.display === "block") {
+        closeProject();
+    }
+});
+
+// Close function
+function closeProject() {
+    modal.style.display = "none";
+}
+
 
 
 
