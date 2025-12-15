@@ -227,6 +227,17 @@ body.light #contact .contact-info,
 body.light #contact .section-title {
     color: #1e293b;   /* dark slate blue – readable & professional */
 }
+/* Contact links styling */
+.contact-info a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
 
 
 
