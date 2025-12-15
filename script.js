@@ -36,7 +36,7 @@ const projects = {
     desc: "AI-based image analysis system to detect corrosion in underwater pipelines for industrial safety.",
     tech: ["Python", "AI", "Image Processing"],
     link: "https://github.com/yourusername/pipeline-corrosion",
-    live: "https://your-live-app-link-here",
+    live: "https://lnkd.in/g8b2PhfW",
     image: "images/pipeline.jpg"
 },
 
@@ -84,5 +84,6 @@ function openProject(key) {
         liveBtn.style.display = "none";
     }
 }
+
 
 
